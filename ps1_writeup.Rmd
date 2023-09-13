@@ -1,0 +1,87 @@
+---
+title: "Problem Set 1"
+author: "Author Name"
+date: "2023-09-07"
+output: 
+    html_document:
+        theme: journal
+    pdf_document:
+        latex_engine: xelatex
+knit: (function(inputFile, encoding) {
+ rmarkdown::render(inputFile, encoding = encoding, 
+ output_format = 'all') 
+ })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#You may need to put a directory in front of the housekeeping file if it is not in the same directory as this Rmd file.
+#For example, if the file is in a parent directory called "code," while this .Rmd is in "code/analysis," you would use: 
+#source('../housekeeping.R')
+source('housekeeping.R')
+# If you hit an issue installing the necessary packages when knitting this .RMD, you can install outside of this RMD by running housekeeping.R on its own.
+# Then you can comment out the installation. 
+```
+
+***Note:** In all of these r codeblocks, I set eval=FALSE. You will need to undo that.*
+
+## 1. Open the .gitignore and add *.csv, *.dta, *.Rdata, etc. 
+
+This will prevent you from pushing any large data files to GitHub. GitHub cannot receive data files that are larger than 100MB. You can use [Git Large File Storage](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage) to submit larger files, but even that has limits.
+
+## 2. Create folders for data, code, documentation, output, and any necessary subfolders within this repository. 
+Reorganize the data files and code within these folders. 
+
+## 3. Skim the [paper]https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Paper.pdf and also reference the [non-technical summary](https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Nontech.pdf) and a [New York Times report](https://www.nytimes.com/interactive/2023/07/24/upshot/ivy-league-elite-college-admissions.html). Briefly explain how the data were generated. 
+
+## 4. Correct the download_data.R to download the .csv to your preferred data folder.
+
+```{r,eval=FALSE}
+school_data <- read.csv(paste0(data,'CollegeAdmissions.csv'))
+```
+
+## 5. First, look at the data. Any quirks about it? 
+
+```{r,eval=FALSE}
+school_data
+```
+
+## 6. Look at the variable `rel_apply` and `rel_attend`. What do these mean?
+ANSWER HERE
+
+## 7. Check the documentation for an explanation of what each row is -- use that information to calculate the number of rows that there should be in the data. Does this match the number of rows in the dataset? 
+Answer how you calculated the number of rows and whether it matches the number of rows in the dataset.
+
+```{r,eval=FALSE}
+some_function_to_count_rows(school_data)
+```
+
+## 8. What about the variable `rel_attend_cond_app`. What does this mean? Can you verify that it is calculated correctly? 
+*Hint: You can use mutate() to create a new variable in a dataframe. filter() is useful for subsetting data. Also, the function signif() is very useful for matching up significant figures. Last, stopifnot() is a great way to catch code before there is a mistake.*
+
+```{r,eval=FALSE}
+school_data %>% mutate(new_var=someexpression)
+```
+
+## 9. The codebook mentions that most of these data are test-score-reweighted. What does that mean? 
+ANSWER HERE.
+
+## 10. Replicate Figures 2a and 2b from the paper. I recommend using ggplot2. Interpret these graphs. Save them to your output folder.
+
+```{r,eval=FALSE}
+
+```
+
+## 11. Replicate Figures 3a and 3b from the paper. Save them to your output folder. Interpret these graphs. 
+
+```{r,eval=FALSE}
+
+```
+
+## 11. Replicate Figures 4a and 4b from the paper. Save them to your output folder. Interpret these graphs. 
+
+```{r,eval=FALSE}
+
+```
+
+## 12. Based on what you have seen so far, do you think that the admissions process is meritocratic? Why or why not? What else would you want to know? 
