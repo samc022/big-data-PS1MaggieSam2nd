@@ -9,11 +9,9 @@
 # Include any other folders you may want
 
 # Install packages
-install.packages('tidyverse','ggplot2')
+#install.packages('tidyverse','ggplot2')
 library(tidyverse)
 library(ggplot2)
-
-here::i_am('housekeeping.R')
 
 my_project <- '/project/path/'
 data <- paste0(my_project, 'data_folder/')

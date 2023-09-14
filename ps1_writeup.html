@@ -370,7 +370,22 @@ display: none;
 
 
 <p><em><strong>Note:</strong> In all of these r codeblocks, I set
-eval=FALSE. You will need to undo that.</em></p>
+eval=FALSE. You will need to undo that.</em> I also ask you to save all
+code to the output folder. You can do this by adding the following after
+any graph you want to save. Alternatively, you can save the graph as an
+<code>object</code> and then save it to the output folder. If you save
+the plot as an object, you will need to add <code>plot</code> to the
+ggsave function.</p>
+<pre class="r"><code>ggplot(CODEHERE)
+ggsave(filename=paste0(output,&#39;figure.pdf&#39;))
+#Save the plot as an object
+plot&lt;-ggplot(CODEHERE)
+#Just calling the object `plot` will show the graph
+plot
+
+othercode
+#Saves the plot object
+ggsave(plot, filename=paste0(output,&#39;figure.pdf&#39;))</code></pre>
 <p>I will be grading this problem set based on the following criteria: -
 Quality of code (33%): Is it well-commented? Is it easy to follow? Can I
 run it? - Quality of graphs (33%): Are they well-labeled? Do they have
@@ -405,8 +420,8 @@ preferred data folder.</h2>
 <h2>5. First, look at the data. Any quirks about it?</h2>
 <pre class="r"><code>school_data</code></pre>
 </div>
-<div id="look-at-the-variable-rel_apply-and-rel_attend.-what-do-these-mean" class="section level2">
-<h2>6. Look at the variable <code>rel_apply</code> and
+<div id="look-at-the-variables-rel_apply-and-rel_attend.-what-do-these-mean" class="section level2">
+<h2>6. Look at the variables <code>rel_apply</code> and
 <code>rel_attend</code>. What do these mean?</h2>
 <p>ANSWER HERE</p>
 </div>
@@ -421,38 +436,92 @@ the number of rows in the dataset.</p>
 <div id="what-about-the-variable-rel_attend_cond_app.-what-does-this-mean-can-you-verify-that-it-is-calculated-correctly" class="section level2">
 <h2>8. What about the variable <code>rel_attend_cond_app</code>. What
 does this mean? Can you verify that it is calculated correctly?</h2>
-<p><em>Hint: You can use mutate() to create a new variable in a
-dataframe. filter() is useful for subsetting data. Also, the function
-signif() is very useful for matching up significant figures. Last,
-stopifnot() is a great way to catch code before there is a
-mistake.</em></p>
-<pre class="r"><code>school_data %&gt;% mutate(new_var=someexpression)</code></pre>
 </div>
 <div id="the-codebook-mentions-that-most-of-these-data-are-test-score-reweighted.-what-does-that-mean" class="section level2">
 <h2>9. The codebook mentions that most of these data are
 test-score-reweighted. What does that mean?</h2>
 <p>ANSWER HERE.</p>
 </div>
-<div id="replicate-figures-2a-and-2b-from-the-paper.-i-recommend-using-ggplot2.-interpret-these-graphs.-save-them-to-your-output-folder." class="section level2">
-<h2>10. Replicate Figures 2a and 2b from the paper. I recommend using
-ggplot2. Interpret these graphs. Save them to your output folder.</h2>
+<div id="replicate-figure-2b-from-the-paper.-i-recommend-using-the-package-ggplot2." class="section level2">
+<h2>10. Replicate Figure 2b from the paper. I recommend using the
+package <code>ggplot2</code>.</h2>
+<p>You’ll need to check the Appendix to get the exact group of schools.
+Interpret the graph. Save it to your output folder.</p>
+<pre class="r"><code>ggplot(data=school_data)</code></pre>
 </div>
-<div id="replicate-figures-3a-and-3b-from-the-paper.-save-them-to-your-output-folder.-interpret-these-graphs." class="section level2">
-<h2>11. Replicate Figures 3a and 3b from the paper. Save them to your
-output folder. Interpret these graphs.</h2>
+<div id="replicate-figures-3a-and-3b-from-the-paper-with-95-ci-bars.-save-them-to-your-output-folder.-interpret-these-graphs." class="section level2">
+<h2>11. Replicate Figures 3a and 3b from the paper with 95% CI bars.
+Save them to your output folder. Interpret these graphs.</h2>
+<pre class="r"><code>ggplot(data=school_data)</code></pre>
 </div>
-<div id="replicate-figures-4a-and-4b-from-the-paper.-save-them-to-your-output-folder.-interpret-these-graphs." class="section level2">
-<h2>11. Replicate Figures 4a and 4b from the paper. Save them to your
-output folder. Interpret these graphs.</h2>
+<div id="replicate-figures-4a-and-4b-from-the-paper-with-95-ci-bars.-save-them-to-your-output-folder.-interpret-these-graphs." class="section level2">
+<h2>11. Replicate Figures 4a and 4b from the paper with 95% CI bars.
+Save them to your output folder. Interpret these graphs.</h2>
+<pre class="r"><code>ggplot(data=school_data)</code></pre>
+</div>
+<div id="a.-plot-the-relative-application-attendance-and-matriculation-rates-for-the-schools-in-the-nescac.-save-it-to-your-output-folder.-interpret-this-graph." class="section level2">
+<h2>12a. Plot the relative application, attendance, and matriculation
+rates for the schools in the NESCAC. Save it to your output folder.
+Interpret this graph.</h2>
+<pre class="r"><code>filter(school_data, somecondition) %&gt;% 
+    ggplot()</code></pre>
+</div>
+<div id="b.-add-95-confidence-intervals-to-the-plot-you-just-made." class="section level2">
+<h2>12b. Add 95% confidence intervals to the plot you just made.</h2>
+<pre class="r"><code>school_data &lt;- mutate(school_data,lower=estimate-1.96*se,upper=estimate+1.96*se)
+plot + geom_errorbar()</code></pre>
 </div>
 <div id="come-up-with-your-own-cool-visualization-of-the-data.-save-it-to-your-output-folder.-interpret-this-graph." class="section level2">
-<h2>12. Come up with your own cool visualization of the data. Save it to
+<h2>13. Come up with your own cool visualization of the data. Save it to
 your output folder. Interpret this graph.</h2>
+<pre class="r"><code>ggplot(data=school_data)</code></pre>
 </div>
-<div id="based-on-what-you-have-seen-so-far-do-you-think-that-the-admissions-process-is-meritocratic-why-or-why-not-what-else-would-you-want-to-know" class="section level2">
-<h2>13. Based on what you have seen so far, do you think that the
-admissions process is meritocratic? Why or why not? What else would you
-want to know?</h2>
+<div id="based-on-what-you-have-seen-so-far-do-you-think-that-the-admissions-process-is-meritocratic-what-about-at-bates-and-other-nescac-schools-why-or-why-not-what-else-would-you-want-to-know" class="section level2">
+<h2>14. Based on what you have seen so far, do you think that the
+admissions process is meritocratic? What about at Bates and other NESCAC
+schools? Why or why not? What else would you want to know?</h2>
+</div>
+<div id="hints" class="section level1">
+<h1>Hints:</h1>
+<p>Below I provide a list of handy functions/tips for R.</p>
+<p>These <code>tidyverse</code> functions: - <code>filter()</code> –
+subset the data - <code>mutate()</code> – create new variables -
+<code>group_by()</code> – group the data - <code>summarise()</code> –
+calculate summary statistics - <code>%&gt;%</code> – pipe operator to
+chain together functions applied to the same data frame</p>
+<p>And this is some useful base R: - <code>c(1,2,3)</code> – create a
+vector - <code>seq(1,10,by=2)</code> – create a sequence -
+<code>rep(1,10)</code> – repeat a value - <code>%in%</code> – check if a
+value is in a vector - <code>signif</code> – round to a certain number
+of significant figures - <code>stopifnot</code> – stop the code if a
+condition is not met. If a condition must be true, you want to stop the
+code before advancing.</p>
+<p>And some useful ggplot2: - <code>geom_point()</code> – scatterplot -
+<code>geom_line()</code> – line plot - <code>geom_errorbar()</code> –
+error bars - <code>aes()</code> – the aesthetic function, which can be
+used to set the x and y axes, as well as the color, shape, etc. of the
+points - You can save any ggplot object as a variable and then add
+layers to it. For example, you can save a scatterplot as
+<code>plot</code> and then add a line to it with
+<code>plot + geom_line()</code>. - <code>ggsave()</code> – save a plot
+to a file. - You can specify the plot object and the filename.</p>
+<pre class="r"><code>plot&lt;-ggplot(data=school_data, aes(x=rel_apply, y=rel_attend)) + geom_point()
+ggsave(filename=paste0(output,&#39;figure.pdf&#39;),plot=plot)</code></pre>
+<pre><code>- If you don&#39;t specify a plot object, it will save the last plot you made:</code></pre>
+<pre class="r"><code>ggplot(data=school_data, aes(x=rel_apply, y=rel_attend)) + geom_point()
+ggplot(data=school_data, aes(x,y)) + geom_point() 
+#This saves the second ggplot
+ggsave(filename=paste0(output,&#39;figure.pdf&#39;))</code></pre>
+</div>
+<div id="basic-statistics" class="section level1">
+<h1>Basic statistics:</h1>
+<p>Use the rough formula that the upper and lower bounds of the
+confidence interval are:</p>
+<p><span class="math display">\[ \hat{\beta} \pm 1.96 \times
+SE(\hat{\beta}) \]</span></p>
+<p>where <span class="math inline">\(\hat{\beta}\)</span> is the
+estimated statistic and <span class="math inline">\(SE(\hat{\beta})\)</span> is the standard error of
+the statistic.</p>
 </div>
 
 
