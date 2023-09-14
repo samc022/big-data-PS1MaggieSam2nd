@@ -1,6 +1,6 @@
 ---
 title: "Problem Set 1"
-author: "Author Name"
+author: "Author Names"
 date: "2023-09-14"
 output: 
     html_document:
