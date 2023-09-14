@@ -11,7 +11,7 @@
 
 <meta name="author" content="Author Name" />
 
-<meta name="date" content="2023-09-07" />
+<meta name="date" content="2023-09-14" />
 
 <title>Problem Set 1</title>
 
@@ -364,7 +364,7 @@ display: none;
 
 <h1 class="title toc-ignore">Problem Set 1</h1>
 <h4 class="author">Author Name</h4>
-<h4 class="date">2023-09-07</h4>
+<h4 class="date">2023-09-14</h4>
 
 </div>
 
@@ -395,8 +395,8 @@ limits.</p>
 necessary subfolders within this repository.</h2>
 <p>Reorganize the data files and code within these folders.</p>
 </div>
-<div id="skim-the-paperhttpsopportunityinsights.orgwp-contentuploads202307collegeadmissions_paper.pdf-and-also-reference-the-non-technical-summary-and-a-new-york-times-report.-briefly-explain-how-the-data-were-generated." class="section level2">
-<h2>3. Skim the [paper]<a href="https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Paper.pdf" class="uri">https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Paper.pdf</a>
+<div id="skim-the-paper-and-also-reference-the-non-technical-summary-and-a-new-york-times-report.-briefly-explain-how-the-data-were-generated." class="section level2">
+<h2>3. Skim the <a href="https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Paper.pdf">paper</a>
 and also reference the <a href="https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Nontech.pdf">non-technical
 summary</a> and a <a href="https://www.nytimes.com/interactive/2023/07/24/upshot/ivy-league-elite-college-admissions.html">New
 York Times report</a>. Briefly explain how the data were generated.</h2>
@@ -480,37 +480,56 @@ schools? Why or why not? What else would you want to know?</h2>
 <div id="hints" class="section level1">
 <h1>Hints:</h1>
 <p>Below I provide a list of handy functions/tips for R.</p>
-<p>These <code>tidyverse</code> functions: - <code>filter()</code> –
-subset the data - <code>mutate()</code> – create new variables -
-<code>group_by()</code> – group the data - <code>summarise()</code> –
-calculate summary statistics - <code>%&gt;%</code> – pipe operator to
-chain together functions applied to the same data frame</p>
-<p>And this is some useful base R: - <code>c(1,2,3)</code> – create a
-vector - <code>seq(1,10,by=2)</code> – create a sequence -
-<code>rep(1,10)</code> – repeat a value - <code>%in%</code> – check if a
-value is in a vector - <code>signif</code> – round to a certain number
-of significant figures - <code>stopifnot</code> – stop the code if a
-condition is not met. If a condition must be true, you want to stop the
-code before advancing.</p>
-<p>And some useful ggplot2: - <code>geom_point()</code> – scatterplot -
-<code>geom_line()</code> – line plot - <code>geom_errorbar()</code> –
-error bars - <code>aes()</code> – the aesthetic function, which can be
-used to set the x and y axes, as well as the color, shape, etc. of the
-points - You can save any ggplot object as a variable and then add
-layers to it. For example, you can save a scatterplot as
-<code>plot</code> and then add a line to it with
-<code>plot + geom_line()</code>. - <code>ggsave()</code> – save a plot
-to a file. - You can specify the plot object and the filename.</p>
+<p>These <code>tidyverse</code> functions:</p>
+<ul>
+<li><code>filter()</code> – subset the data</li>
+<li><code>mutate()</code> – create new variables</li>
+<li><code>group_by()</code> – group the data</li>
+<li><code>summarise()</code> – calculate summary statistics</li>
+<li><code>%&gt;%</code> – pipe operator to chain together functions
+applied to the same data frame</li>
+</ul>
+<p>And this is some useful base R:</p>
+<ul>
+<li><code>c(1,2,3)</code> – create a vector</li>
+<li><code>seq(1,10,by=2)</code> – create a sequence</li>
+<li><code>rep(1,10)</code> – repeat a value</li>
+<li><code>%in%</code> – check if a value is in a vector</li>
+<li><code>signif</code> – round to a certain number of significant
+figures</li>
+<li><code>stopifnot</code> – stop the code if a condition is not met. If
+a condition must be true, you want to stop the code before
+advancing.</li>
+</ul>
+<p>And some useful ggplot2:</p>
+<ul>
+<li><code>geom_point()</code> – scatterplot</li>
+<li><code>geom_line()</code> – line plot</li>
+<li><code>geom_errorbar()</code> – error bars</li>
+<li><code>aes()</code> – the aesthetic function, which can be used to
+set the x and y axes, as well as the color, shape, etc. of the
+points</li>
+<li>You can save any ggplot object as a variable and then add layers to
+it. For example, you can save a scatterplot as <code>plot</code> and
+then add a line to it with <code>plot + geom_line()</code>.</li>
+<li><code>ggsave()</code> – save a plot to a file.
+<ul>
+<li>You can specify the plot object and the filename.</li>
+</ul>
 <pre class="r"><code>plot&lt;-ggplot(data=school_data, aes(x=rel_apply, y=rel_attend)) + geom_point()
 ggsave(filename=paste0(output,&#39;figure.pdf&#39;),plot=plot)</code></pre>
-<pre><code>- If you don&#39;t specify a plot object, it will save the last plot you made:</code></pre>
+<ul>
+<li>If you don’t specify a plot object, it will save the last plot you
+made:</li>
+</ul>
 <pre class="r"><code>ggplot(data=school_data, aes(x=rel_apply, y=rel_attend)) + geom_point()
 ggplot(data=school_data, aes(x,y)) + geom_point() 
 #This saves the second ggplot
-ggsave(filename=paste0(output,&#39;figure.pdf&#39;))</code></pre>
+ggsave(filename=paste0(output,&#39;figure.pdf&#39;))</code></pre></li>
+</ul>
 </div>
-<div id="basic-statistics" class="section level1">
-<h1>Basic statistics:</h1>
+<div id="basic-statistics-tip" class="section level1">
+<h1>Basic statistics tip:</h1>
 <p>Use the rough formula that the upper and lower bounds of the
 confidence interval are:</p>
 <p><span class="math display">\[ \hat{\beta} \pm 1.96 \times

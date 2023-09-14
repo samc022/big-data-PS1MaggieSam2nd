@@ -1,12 +1,13 @@
 ---
 title: "Problem Set 1"
 author: "Author Name"
-date: "2023-09-07"
+date: "2023-09-14"
 output: 
     html_document:
         theme: journal
     pdf_document:
         latex_engine: xelatex
+urlcolor: blue
 knit: (function(inputFile, encoding) {
  rmarkdown::render(inputFile, encoding = encoding, 
  output_format = 'all') 
@@ -19,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #For example, if the file is in a parent directory called "code," while this .Rmd is in "code/analysis," you would use: 
 #source('../housekeeping.R')
 source('housekeeping.R')
-# If you hit an issue installing the necessary packages when knitting this .RMD, you can install outside of this RMD by running housekeeping.R on its own.
+# If you hit an issue installing the necessary packages when knitting this .Rmd, you can install outside of this Rmd by running housekeeping.R on its own.
 # Then you can comment out the installation. 
 ```
 
@@ -40,7 +41,7 @@ This will prevent you from pushing any large data files to GitHub. GitHub cannot
 ## 2. Create folders for data, code, documentation, output, and any necessary subfolders within this repository. 
 Reorganize the data files and code within these folders. 
 
-## 3. Skim the [paper]https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Paper.pdf and also reference the [non-technical summary](https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Nontech.pdf) and a [New York Times report](https://www.nytimes.com/interactive/2023/07/24/upshot/ivy-league-elite-college-admissions.html). Briefly explain how the data were generated. 
+## 3. Skim the [paper](https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Paper.pdf) and also reference the [non-technical summary](https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Nontech.pdf) and a [New York Times report](https://www.nytimes.com/interactive/2023/07/24/upshot/ivy-league-elite-college-admissions.html). Briefly explain how the data were generated. 
 
 ## 4. Correct the download_data.R to download the .csv to your preferred data folder.
 
@@ -123,6 +124,7 @@ ggplot(data=school_data)
 Below I provide a list of handy functions/tips for R. 
 
 These `tidyverse` functions:
+
 - `filter()` -- subset the data
 - `mutate()` -- create new variables
 - `group_by()` -- group the data
@@ -130,6 +132,7 @@ These `tidyverse` functions:
 - `%>%` -- pipe operator to chain together functions applied to the same data frame
 
 And this is some useful base R:
+
 - `c(1,2,3)` -- create a vector
 - `seq(1,10,by=2)` -- create a sequence
 - `rep(1,10)` -- repeat a value
@@ -138,6 +141,7 @@ And this is some useful base R:
 - `stopifnot` -- stop the code if a condition is not met. If a condition must be true, you want to stop the code before advancing.
 
 And some useful ggplot2:
+
 - `geom_point()` -- scatterplot
 - `geom_line()` -- line plot
 - `geom_errorbar()` -- error bars
@@ -145,20 +149,22 @@ And some useful ggplot2:
 - You can save any ggplot object as a variable and then add layers to it. For example, you can save a scatterplot as `plot` and then add a line to it with `plot + geom_line()`.
 - `ggsave()` -- save a plot to a file. 
     - You can specify the plot object and the filename.
-```{r,eval=FALSE}
-plot<-ggplot(data=school_data, aes(x=rel_apply, y=rel_attend)) + geom_point()
-ggsave(filename=paste0(output,'figure.pdf'),plot=plot)
-```
+    ```{r,eval=FALSE}
+    plot<-ggplot(data=school_data, aes(x=rel_apply, y=rel_attend)) + geom_point()
+    ggsave(filename=paste0(output,'figure.pdf'),plot=plot)
+    ```
+
     - If you don't specify a plot object, it will save the last plot you made:
-```{r,eval=FALSE}
-ggplot(data=school_data, aes(x=rel_apply, y=rel_attend)) + geom_point()
-ggplot(data=school_data, aes(x,y)) + geom_point() 
-#This saves the second ggplot
-ggsave(filename=paste0(output,'figure.pdf'))
-```
+
+    ```{r,eval=FALSE}
+    ggplot(data=school_data, aes(x=rel_apply, y=rel_attend)) + geom_point()
+    ggplot(data=school_data, aes(x,y)) + geom_point() 
+    #This saves the second ggplot
+    ggsave(filename=paste0(output,'figure.pdf'))
+    ```
 
 
-# Basic statistics:
+# Basic statistics tip:
 Use the rough formula that the upper and lower bounds of the confidence interval are:
 
 \[ \hat{\beta} \pm 1.96 \times SE(\hat{\beta}) \]
