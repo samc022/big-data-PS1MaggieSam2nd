@@ -1,7 +1,8 @@
 # Problem Set 1 for Big Data Class
+## Due: 9/24/2023
 
 ## Group problem set 
-For this project you will work in groups of 2-3. This will test your skills for collaborating on Github. 
+For this project you will work in groups of 2. You can choose your pair. This will test your skills for collaborating on Github. 
 
 ## Problem Set description
 In this problem set, you will experiment with cleaning a messy dataset and producing some basic results. You will replicate graphs from the paper [Diversifying Society’s Leaders? The Determinants and Causal Effects of Admission to Highly Selective Private Colleges](https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Paper.pdf) by Raj Chetty, David J. Deming, and John N. Friedman (and a variety of co-authors). This working paper uses anonymized admissions data from 139 elite colleges linked to income tax records to ask whether these highly selective schools show a preference for high-income students beyond SAT/ACT scores and the effect of attending one of these schools on future earnings. 
