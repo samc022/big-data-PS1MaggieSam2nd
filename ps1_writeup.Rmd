@@ -23,27 +23,17 @@ source('housekeeping.R')
 # Then you can comment out the installation. 
 ```
 
-***Note:** In all of these r codeblocks, I set eval=FALSE. You will need to undo that.* I also ask you to save all code to the output folder. You can do this by adding the following after any graph you want to save. Alternatively, you can save the graph as an `object` and then save it to the output folder. If you save the plot as an object, you will need to add `plot` to the ggsave function.
+***Note:** In all of these r codeblocks, I set eval=FALSE. You will need to undo that.
 
-```{r,eval=FALSE}
-ggplot(CODEHERE)
-ggsave(filename=paste0(output,'figure.pdf'))
-#Save the plot as an object
-plot<-ggplot(CODEHERE)
-#Just calling the object `plot` will show the graph
-plot
+I also ask you to save all figures to the output folder in addition to having them appear on this .Rmd file. I am encouraging you to **practice** using folders and filepaths. 
 
-othercode
-#Saves the plot object
-ggsave(plot, filename=paste0(output,'figure.pdf'))
-```
-
+# Grading
 I will be grading this problem set based on the following criteria:
 - Quality of code (33%): Is it well-commented? Is it easy to follow? Can I run it?
 - Quality of graphs (33%): Are they well-labeled? Do they have titles? Do they have legends? Are they formatted well?
 - Quality of answers (33%): Are they clear? Do they answer the question?
 
-## 1. Open the .gitignore and add *.csv, *.dta, *.Rdata, etc. 
+## 1. Open the .gitignore and add *.csv, *.dta, *.Rdata, and any other data file extensions you have in mind. 
 
 This will prevent you from pushing any large data files to GitHub. GitHub cannot receive data files that are larger than 100MB. You can use [Git Large File Storage](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage) to submit larger files, but even that has limits.
 
@@ -53,6 +43,8 @@ Reorganize the data files and code within these folders.
 ## 3. Skim the [paper]https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Paper.pdf and also reference the [non-technical summary](https://opportunityinsights.org/wp-content/uploads/2023/07/CollegeAdmissions_Nontech.pdf) and a [New York Times report](https://www.nytimes.com/interactive/2023/07/24/upshot/ivy-league-elite-college-admissions.html). Briefly explain how the data were generated. 
 
 ## 4. Correct the download_data.R to download the .csv to your preferred data folder.
+
+**Note:** If you correctly added *.csv to the .gitignore, you will not be able to push this csv to GitHub. It will not even appear as a file that you can stage to commit. This is good! You don't want to push large data files to GitHub.
 
 ```{r,eval=FALSE}
 school_data <- read.csv(paste0(data,'CollegeAdmissions.csv'))
@@ -125,6 +117,7 @@ ggplot(data=school_data)
 
 ## 14. Based on what you have seen so far, do you think that the admissions process is meritocratic? What about at Bates and other NESCAC schools? Why or why not? What else would you want to know? 
 
+\newpage
 
 # Hints:
 Below I provide a list of handy functions/tips for R. 

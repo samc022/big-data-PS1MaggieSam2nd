@@ -369,31 +369,21 @@ display: none;
 </div>
 
 
-<p><em><strong>Note:</strong> In all of these r codeblocks, I set
-eval=FALSE. You will need to undo that.</em> I also ask you to save all
-code to the output folder. You can do this by adding the following after
-any graph you want to save. Alternatively, you can save the graph as an
-<code>object</code> and then save it to the output folder. If you save
-the plot as an object, you will need to add <code>plot</code> to the
-ggsave function.</p>
-<pre class="r"><code>ggplot(CODEHERE)
-ggsave(filename=paste0(output,&#39;figure.pdf&#39;))
-#Save the plot as an object
-plot&lt;-ggplot(CODEHERE)
-#Just calling the object `plot` will show the graph
-plot
-
-othercode
-#Saves the plot object
-ggsave(plot, filename=paste0(output,&#39;figure.pdf&#39;))</code></pre>
+<p>*<strong>Note:</strong> In all of these r codeblocks, I set
+eval=FALSE. You will need to undo that.</p>
+<p>I also ask you to save all figures to the output folder in addition
+to having them appear on this .Rmd file. I am encouraging you to
+<strong>practice</strong> using folders and filepaths.</p>
+<div id="grading" class="section level1">
+<h1>Grading</h1>
 <p>I will be grading this problem set based on the following criteria: -
 Quality of code (33%): Is it well-commented? Is it easy to follow? Can I
 run it? - Quality of graphs (33%): Are they well-labeled? Do they have
 titles? Do they have legends? Are they formatted well? - Quality of
 answers (33%): Are they clear? Do they answer the question?</p>
-<div id="open-the-.gitignore-and-add-.csv-.dta-.rdata-etc." class="section level2">
-<h2>1. Open the .gitignore and add <em>.csv, </em>.dta, *.Rdata,
-etc.</h2>
+<div id="open-the-.gitignore-and-add-.csv-.dta-.rdata-and-any-other-data-file-extensions-you-have-in-mind." class="section level2">
+<h2>1. Open the .gitignore and add <em>.csv, </em>.dta, *.Rdata, and any
+other data file extensions you have in mind.</h2>
 <p>This will prevent you from pushing any large data files to GitHub.
 GitHub cannot receive data files that are larger than 100MB. You can use
 <a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage">Git
@@ -414,6 +404,10 @@ York Times report</a>. Briefly explain how the data were generated.</h2>
 <div id="correct-the-download_data.r-to-download-the-.csv-to-your-preferred-data-folder." class="section level2">
 <h2>4. Correct the download_data.R to download the .csv to your
 preferred data folder.</h2>
+<p><strong>Note:</strong> If you correctly added *.csv to the
+.gitignore, you will not be able to push this csv to GitHub. It will not
+even appear as a file that you can stage to commit. This is good! You
+don’t want to push large data files to GitHub.</p>
 <pre class="r"><code>school_data &lt;- read.csv(paste0(data,&#39;CollegeAdmissions.csv&#39;))</code></pre>
 </div>
 <div id="first-look-at-the-data.-any-quirks-about-it" class="section level2">
@@ -480,6 +474,8 @@ your output folder. Interpret this graph.</h2>
 <h2>14. Based on what you have seen so far, do you think that the
 admissions process is meritocratic? What about at Bates and other NESCAC
 schools? Why or why not? What else would you want to know?</h2>
+<div style="page-break-after: always;"></div>
+</div>
 </div>
 <div id="hints" class="section level1">
 <h1>Hints:</h1>
