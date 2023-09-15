@@ -18,6 +18,13 @@ I have provided starter code, which you will use to complete this project. The c
 
 The problem set questions are in ps1_writeup.Rmd. 
 
+## Grading
+I will be grading this problem set based on the following criteria:
+- Quality of code (33%): Is it well-commented? Is it easy to follow? Can I run it?
+- Quality of graphs (33%): Are they well-labeled? Do they have titles? Do they have legends? Are they formatted well?
+- Quality of answers (33%): Are they clear? Do they answer the question?
+
+
 ## Submitting project
 
 In order to submit this project, you will need to:

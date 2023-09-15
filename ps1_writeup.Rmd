@@ -24,15 +24,12 @@ source('housekeeping.R')
 # Then you can comment out the installation. 
 ```
 
-***Note:** In all of these r codeblocks, I set eval=FALSE. You will need to undo that.
+# Problem Set 1: Replication and Organization
+See the problem set instructions in the [README.md](https://github.com/big-data-and-economics/big-data-PS1/blob/main/README.md). 
+
+**Note:** In all of these r codeblocks, I set eval=FALSE. You will need to undo that.
 
 I also ask you to save all figures to the output folder in addition to having them appear on this .Rmd file. I am encouraging you to **practice** using folders and filepaths. 
-
-# Grading
-I will be grading this problem set based on the following criteria:
-- Quality of code (33%): Is it well-commented? Is it easy to follow? Can I run it?
-- Quality of graphs (33%): Are they well-labeled? Do they have titles? Do they have legends? Are they formatted well?
-- Quality of answers (33%): Are they clear? Do they answer the question?
 
 ## 1. Open the .gitignore and add *.csv, *.dta, *.Rdata, and any other data file extensions you have in mind. 
 
@@ -116,7 +113,7 @@ plot + geom_errorbar()
 ggplot(data=school_data)
 ```
 
-## 14. Based on what you have seen so far, do you think that the admissions process is meritocratic? What about at Bates and other NESCAC schools? Why or why not? What else would you want to know? 
+## 14. Based on what you have seen so far, do you think that the admissions process at selective US colleges is meritocratic? What about at Bates and other NESCAC schools? Why or why not? What else would you want to know? 
 
 \newpage
 
