@@ -3,7 +3,7 @@
     "path": "~/Desktop/Big Data/big-data-PS1MaggieSam2nd/housekeeping.r",
     "project_path": "housekeeping.r",
     "type": "r_source",
-    "hash": "0",
+    "hash": "2927925799",
     "contents": "",
     "dirty": false,
     "created": 1702751083773.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "20,53",
+        "cursorPosition": "7,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1702751332,
+    "lastKnownWriteTime": 1703027147,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1702751332146,
+    "last_content_update": 1703027147295,
     "read_only": false,
     "read_only_alternatives": []
 }

@@ -3,7 +3,7 @@
     "path": "~/Desktop/Big Data/big-data-PS1MaggieSam2nd/code/question13.R",
     "project_path": "code/question13.R",
     "type": "r_source",
-    "hash": "2996985273",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1702938297726.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "32,0",
+        "cursorPosition": "16,57",
         "scrollLine": "9"
     },
     "folds": "",
-    "lastKnownWriteTime": 1702938701,
+    "lastKnownWriteTime": 1703027221,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1702938701455,
+    "last_content_update": 1703027221011,
     "read_only": false,
     "read_only_alternatives": []
 }

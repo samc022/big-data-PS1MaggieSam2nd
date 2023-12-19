@@ -436,31 +436,14 @@ rate. We can verify that it is calculated correctly by manually solving
 for the ratio, taking one value from rel_attend and dividing it by
 rel_apply and comparing it with the listed value for
 rel_attend_cond_app.</p>
-<pre class="r"><code># Source the housekeeping file to set up your environment
-source(&#39;/Users/samuelcrawford/Desktop/Big Data/big-data-PS1MaggieSam2nd/housekeeping.R&#39;)
+<pre class="r"><code># Choose an observation
+chosen_index &lt;- 2
 
-# Read the CSV file using the path defined in housekeeping.R
-file_path &lt;- paste0(data, &#39;CollegeAdmissions.csv&#39;)  # Using the &#39;data&#39; path from housekeeping.R
+# Check if the ratio is equal to rel_attend_cond_app for the chosen observation
+verify &lt;- data$rel_attend[chosen_index] / data$rel_apply[chosen_index] == data$rel_attend_cond_app[chosen_index]
 
-# Read the CSV file into a data frame
-data_df &lt;- read_csv(file_path)
-
-# Choose an observation
-chosen_index &lt;- 2  # R is 1-indexed, so the second observation is index 2
-
-# Check if the chosen_index is within the range of data_df
-if(!is.na(data_df$rel_attend[chosen_index]) &amp;&amp; 
-   !is.na(data_df$rel_apply[chosen_index]) &amp;&amp; 
-   !is.na(data_df$rel_att_cond_app[chosen_index])) {
-  
-  # Check if the ratio is equal to rel_att_cond_app for the chosen observation
-  verify &lt;- data_df$rel_attend[chosen_index] / data_df$rel_apply[chosen_index] == data_df$rel_att_cond_app[chosen_index]
-  
-  # Print the result
-  print(if (verify) &quot;Yes&quot; else &quot;No&quot;)
-} else {
-  print(&quot;Invalid data or index out of range.&quot;)
-}</code></pre>
+# Print the result
+cat(ifelse(verify, &quot;Yes&quot;, &quot;No&quot;))</code></pre>
 <p>install.packages(reticulate) ## 9. The codebook mentions that most of
 these data are test-score-reweighted. What does that mean?</p>
 <p>To create a more accurate representation of the relationship between

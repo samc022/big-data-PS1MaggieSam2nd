@@ -3,7 +3,7 @@
     "path": "~/Desktop/Big Data/big-data-PS1MaggieSam2nd/code/ps1_writeup.Rmd",
     "project_path": "code/ps1_writeup.Rmd",
     "type": "r_markdown",
-    "hash": "1452852011",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1702751373456.0,
@@ -12,16 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "301,0",
-        "scrollLine": "287",
+        "cursorPosition": "73,0",
+        "scrollLine": "67",
         "last_setup_crc32": "26433582bb936d49"
     },
     "folds": "",
-    "lastKnownWriteTime": 1702950107,
+    "lastKnownWriteTime": 1703027229,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1702950107919,
+    "last_content_update": 1703027229033,
     "read_only": false,
     "read_only_alternatives": []
 }
