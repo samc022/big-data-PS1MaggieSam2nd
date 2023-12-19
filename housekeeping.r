@@ -13,7 +13,9 @@
 library(tidyverse)
 library(ggplot2)
 
-my_project <- '/project/path/'
-data <- paste0(my_project, 'data_folder/')
-codebook <- paste0(my_project, 'codebook_folder/')
-code <- paste0(my_project, 'code_folder/')
+my_project <- '/Users/samuelcrawford/Desktop/Big Data/big-data-PS1MaggieSam2nd/'
+data <- paste0(my_project, 'data/')
+codebook <- paste0(my_project, 'codebook/')
+code <- paste0(my_project, 'code/')
+output <- paste0(my_project, 'output/')
+documentation <- paste0(my_project, 'documentation/')
