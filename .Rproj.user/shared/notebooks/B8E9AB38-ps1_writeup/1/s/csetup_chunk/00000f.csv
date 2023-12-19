@@ -1,0 +1,7 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0","#You may need to put a directory in front of the housekeeping file if it is not in the same directory as this Rmd file."
+"0","#For example, if the file is in a parent directory called ""code,"" while this .Rmd is in ""code/analysis,"" you would use: "
+"0","#source('../housekeeping.R')"
+"0","source('/Users/samuelcrawford/Desktop/Big Data/big-data-PS1MaggieSam2nd/housekeeping.r')"
+"0","# If you hit an issue installing the necessary packages when knitting this .Rmd, you can install outside of this Rmd by running housekeeping.R on its own."
+"0","# Then you can comment out the installation. "

@@ -1,0 +1,15 @@
+"0","reticulate::repl_python()
+file_path <- ""data/CollegeAdmissions.csv""  # Adjust this if your file path is different
+"
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'file_path' is not defined
+"
+"0","data <- read_csv(file_path)"
+"2","Traceback (most recent call last):
+  File ""<string>"", line 1, in <module>
+NameError: name 'data' is not defined
+"
+"0","chosen_index = 1"
+"0",""
+"0",""
